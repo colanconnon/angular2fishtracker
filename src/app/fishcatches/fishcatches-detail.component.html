@@ -1,0 +1,15 @@
+<style>
+
+#map {
+   
+}
+</style>
+<div *ngIf="fishcatch">
+  <h3>Lake Name: {{fishcatch.name}}</h3>
+  <h4>Latitude: {{fishcatch.latitude}} Longitude: {{fishcatch.longitude}} </h4>
+  <p> Details: {{fishcatch.details}} </p>
+  
+  
+    <div id="mapcanvas" style="width: 100%; height: 500px; margin-bottom: 50px;">
+    </div>
+</div>

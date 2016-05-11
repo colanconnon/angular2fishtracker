@@ -1,0 +1,18 @@
+<form>
+    <h1 class="page-header"> Register </h1>
+    <p class="help-text"> <a [routerLink]="['/Login']"> Already have an account? Click here to login. </a> </p>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" [(ngModel)]="username" class="form-control" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" [(ngModel)]="password" class="form-control" id="password" placeholder="Password">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input type="password" [(ngModel)]="confirmPassword" class="form-control" id="confirmPassword" placeholder="Password">
+  </div>
+
+  <button (click)="registerClick()" type="button" class="btn btn-default">Submit</button>
+</form>

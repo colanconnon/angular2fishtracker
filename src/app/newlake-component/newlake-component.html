@@ -1,0 +1,19 @@
+
+<form>
+  <h1 class="page-header">Enter a new lake </h1>
+      <p class="help-text"> <a [routerLink]="['/Lakes']"> Back to list </a> </p>
+  <div class="alert alert-success" *ngIf="lakeSuccess">
+  
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Lake name</label>
+    <input type="text" [(ngModel)]="lake.lakeName" class="form-control" id="lakeName" placeholder="Enter New Lake Name">
+  </div>
+
+
+ <br />
+ <br />
+    
+  
+  <button type="submit" (click)="onSubmitLake()" class="btn btn-default">Submit</button>
+</form>

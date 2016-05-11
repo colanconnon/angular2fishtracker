@@ -1,3 +1,38 @@
-<h1>
-  {{title}}
-</h1>
+
+       
+
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" [routerLink]="['/Home']">Fishtracker</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="javascript:void(0)" [routerLink]="['/Home']">Home</a></li>
+            <li><a href="javascript:void(0)" [routerLink]="['/About']">About</a></li>
+           <li *ngIf="!isLoggedIn"><a [routerLink]="['/Login']" >Login</a></li>
+          <li *ngIf="!isLoggedIn"><a [routerLink]="['/Register']">Register</a></li>
+          <li *ngIf="isLoggedIn"><a [routerLink]="['/Logout']" > Logout </a></li>
+          <li *ngIf="isLoggedIn"><a [routerLink]="['/FishCatches']" > FishCatches</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container" style="margin-bottom: 180px;">
+    <router-outlet></router-outlet>
+    </div>
+
+    <footer style="background: #375a7f; color: #fff; padding:50px;" class="footer">
+      <div class="container">
+        <p>Fish tracker.</p>
+      </div>
+    </footer>

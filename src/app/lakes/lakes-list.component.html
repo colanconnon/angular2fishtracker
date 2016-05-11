@@ -1,0 +1,12 @@
+<h2>Lakes List</h2>
+
+<ul>
+  <li *ngFor="#lakes of lakes">
+    <a
+      [routerLink]="['LakesDetail', { id: lakes.id }]">
+      <strong>{{lakes.id}}</strong>
+      -
+      {{lakes.lakename}}
+    </a>
+  </li>
+</ul>

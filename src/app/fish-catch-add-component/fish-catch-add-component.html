@@ -1,0 +1,30 @@
+
+<form>
+  <h1 class="page-header">New Fish Catch </h1>
+      <p class="help-text"> <a [routerLink]="['/FishCatches']"> Back to list </a> </p>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Longitude</label>
+    <input type="text" [(ngModel)]="fishCatch.longitude" class="form-control" id="longitude" placeholder="Longitude">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Latitude</label>
+    <input type="text" [(ngModel)]="fishCatch.latitude" class="form-control" id="exampleInputPassword1" placeholder="Latitude">
+  </div>
+  <div class="form-group">
+      <label for="Temperature"> Temperature </label>
+      <input type="text" [(ngModel)]="fishCatch.temperature" class="form-control" id="Temperature" placeholder="temperature" />
+  </div>
+  <div class="form-group">
+    <label for="lake">Select Lake</label>
+    <select [(ngModel)]="fishCatch.lake_id" class="form-control" required>
+        <option *ngFor="let l of lakes" [value]="l.id">{{l.lakename}}</option>
+    </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="details">Details </label>
+        <textarea [(ngModel)]="fishCatch.details" class="form-control" id="details"></textarea>
+    </div>
+  <button type="submit" (click)="submit()" class="btn btn-default">Submit</button>
+</form>

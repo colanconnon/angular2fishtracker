@@ -7,6 +7,8 @@
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
 
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
@@ -33,5 +35,18 @@
       System.import('main');
     }).catch(console.error.bind(console));
   </script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $(document).on('click','.navbar-collapse.in',function(e) {
+            if( $(e.target).is('a') ) {
+                $(this).collapse('hide');
+            }
+        });
+    </script>
+        <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVJy4mjex7GmYufoTVxV_xZ3y3fo3BWQk">
+    </script>
 </body>
 </html>
