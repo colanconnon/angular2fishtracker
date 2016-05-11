@@ -20,7 +20,6 @@ export class FishcatchesService {
     headers.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
 
     let options = new RequestOptions({headers: headers});
-
     return this.http.get(this.fishCatchGetUrl, options).map(res => res.json().fishCatches);
   }
   get(id: string) {

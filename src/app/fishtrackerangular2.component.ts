@@ -27,7 +27,6 @@ import {LakesRoot} from './lakes/lakes-root.component';
   {path: '/about', component: AboutComponent, name: 'About'}
 ])
 export class Fishtrackerangular2AppComponent {
-  title = 'fishtrackerangular2 works!';
     private isLoggedIn: boolean = false;
 
   constructor(private loginService: LoginService) {
