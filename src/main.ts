@@ -9,4 +9,5 @@ if (environment.production) {
   enableProdMode();
 }
 
+
 bootstrap(Fishtrackerangular2AppComponent, [ROUTER_PROVIDERS, HTTP_PROVIDERS]);
