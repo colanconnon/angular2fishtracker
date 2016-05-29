@@ -21,13 +21,14 @@
           <li *ngIf="!isLoggedIn"><a [routerLink]="['/Register']">Register</a></li>
           <li *ngIf="isLoggedIn"><a [routerLink]="['/Logout']" > Logout </a></li>
           <li *ngIf="isLoggedIn"><a [routerLink]="['/FishCatches']" > FishCatches</a></li>
+          <li *ngIf="isLoggedIn"><a [routerLink]="['/Lakes']"> Lakes </a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <!-- Begin page content -->
-    <div class="container" style="margin-bottom: 180px;">
+    <div class="container" style="margin-bottom: 180px;margin-top: 50px;">
     <router-outlet></router-outlet>
     </div>
 

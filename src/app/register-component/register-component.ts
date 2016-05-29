@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {RegisterService} from './register-service';
 
 @Component({
@@ -19,6 +19,9 @@ export class RegisterComponent {
 
   registerClick() {
     this.registerService.Register(this.username, this.password, this.confirmPassword)
-        .subscribe(res => { this._router.navigate(['Login']); });
+        .subscribe(res => {
+           console.log(res);
+           this._router.navigate(['Login']); 
+          });
   }
 }
