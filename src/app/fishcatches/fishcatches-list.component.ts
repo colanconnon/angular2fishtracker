@@ -13,6 +13,5 @@ export class FishcatchesListComponent implements OnInit {
   constructor(private _service: FishcatchesService) {}
   ngOnInit() { this._service.getAll().subscribe(res =>{
     this.fishcatches = res;
-    console.log(this.fishcatches);
   } ) }
 }
