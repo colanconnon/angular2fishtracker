@@ -1,12 +1,18 @@
 <h2>Lakes List</h2>
 <a [routerLink]="['NewLake']" class="btn btn-primary"> Insert a new lake </a>
-<ul>
-  <li *ngFor="#lakes of lakes">
-    <a
-      [routerLink]="['LakesDetail', { id: lakes.id }]">
-      <strong>{{lakes.id}}</strong>
-      -
-      {{lakes.lakename}}
-    </a>
-  </li>
-</ul>
+
+<div class="clear-fix"> </div>
+<br />
+<div class="col-md-4" *ngFor="#lakes of lakes">
+  <div class="card">
+    <div class="content">
+      <h3>Lake Name: 
+        <br />
+        {{lakes.lakename}}</h3>
+
+    </div>
+    <div class="action">
+      <a [routerLink]="['LakesDetail', { id: lakes.id }]" >View detail</a>
+    </div>
+  </div>
+</div>

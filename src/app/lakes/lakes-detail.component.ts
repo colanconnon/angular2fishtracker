@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Lake, LakesService} from './lakes.service';
-import {RouteParams, Router} from '@angular/router-deprecated';
+import {RouteParams, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {CanDeactivate, ComponentInstruction} from '@angular/router-deprecated';
 
 @Component({
   templateUrl: 'app/lakes/lakes-detail.component.html',
-  styleUrls: ['app/lakes/lakes-detail.component.css']
+  styleUrls: ['app/lakes/lakes-detail.component.css'],
+  directives: [ROUTER_DIRECTIVES]
 })
 export class LakesDetailComponent implements OnInit,
     CanDeactivate {
