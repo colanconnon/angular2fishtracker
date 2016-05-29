@@ -22,9 +22,7 @@ export class FishCatchAddComponent {
   }
 
   submit() {
-    console.log(this.fishCatch); 
     this._fishCatchService.post(this.fishCatch).subscribe(result => {
-      console.log(result);
       this.success = true;
     });
   }
