@@ -45,7 +45,7 @@ export class FishcatchesDetailComponent implements OnInit {
 
   initMap(latitude, longitude) {
     var map = new google.maps.Map(
-        document.getElementById('mapcanvas'), {center: {lat: latitude, lng: longitude}, zoom: 20});
+        document.getElementById('mapcanvas'), {center: {lat: latitude, lng: longitude}, zoom: 13});
     new google.maps.Marker({position: {lat: latitude, lng: longitude}, map: map});
   }
 }
