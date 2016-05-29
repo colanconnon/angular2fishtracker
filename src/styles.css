@@ -124,3 +124,9 @@ code {
       }
     .card .image img {
       border-radius: 2px 2px 0 0; }
+      
+ #page-content {
+  margin-bottom: 180px;
+  margin-top: 60px;  
+ }
+ 

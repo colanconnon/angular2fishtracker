@@ -15,6 +15,7 @@ import {FishCatch} from '../fishcatches/fishcatch';
 export class FishCatchAddComponent {
   private lakes: Lake[];
   public fishCatch: FishCatch;
+  private success: boolean;
   constructor(private _lakeService: LakesService, private _fishCatchService: FishcatchesService) {
     this._lakeService.getAll().subscribe(result => this.lakes = result);
     this.fishCatch = new FishCatch();
@@ -24,6 +25,7 @@ export class FishCatchAddComponent {
     console.log(this.fishCatch); 
     this._fishCatchService.post(this.fishCatch).subscribe(result => {
       console.log(result);
+      this.success = true;
     });
   }
 }
