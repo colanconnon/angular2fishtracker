@@ -11,5 +11,8 @@ import {FishCatch} from './fishcatch';
 export class FishcatchesListComponent implements OnInit {
   fishcatches: FishCatch[];
   constructor(private _service: FishcatchesService) {}
-  ngOnInit() { this._service.getAll().subscribe(res => this.fishcatches = res) }
+  ngOnInit() { this._service.getAll().subscribe(res =>{
+    this.fishcatches = res;
+    console.log(this.fishcatches);
+  } ) }
 }

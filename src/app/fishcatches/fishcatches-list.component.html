@@ -2,11 +2,11 @@
 <a [routerLink]="['FishCatchAdd']" class="btn btn-primary">Insert a new catch</a>
 <div class="clear-fix"> </div>
 <br />
-   <div class="col-md-4" *ngFor="let fishcatch of fishcatches; let ndx = index">
+   <div class="col-md-4" *ngFor="let fishcatch of fishcatches">
       <div class="card" >
     <div class="content">
         <h2>
-          {{fishcatch.lake_id}}</h2>
+          {{fishcatch.lakename}}</h2>
     <p>Details: {{fishcatch.details}} </p>
     <p> Latitude: {{fishcatch.latitude}} </p>
      <p> Longitude: {{fishcatch.longitude}} </p>
