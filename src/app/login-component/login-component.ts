@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {LoginService} from './login-service';
 
+declare var toastr;
 @Component({
   selector: 'login-component',
   templateUrl: 'app/\/login-component/login-component.html',
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.Login(this.username, this.password).subscribe(res => {
       this.loginService.annouceLogin(true);
+      toastr.success("You are now logged in!", "Successful login");
     });
   }
 }
