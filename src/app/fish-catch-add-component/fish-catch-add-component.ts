@@ -5,6 +5,7 @@ import {FishcatchesService} from '../fishcatches/fishcatches.service';
 import {FishCatch} from '../fishcatches/fishcatch';
 
 declare var google;
+declare var toastr;
 @Component({
   selector: 'fish-catch-add-component',
   templateUrl: 'app///fish-catch-add-component/fish-catch-add-component.html',
@@ -16,7 +17,6 @@ declare var google;
 export class FishCatchAddComponent implements AfterViewInit {
   private lakes: Lake[];
   public fishCatch: FishCatch;
-  private success: boolean;
   @ViewChild('map') map: any;
   constructor(private _lakeService: LakesService, private _fishCatchService: FishcatchesService,
     private renderer: Renderer, private _zone: NgZone) {
@@ -31,7 +31,8 @@ export class FishCatchAddComponent implements AfterViewInit {
 
   submit() {
     this._fishCatchService.post(this.fishCatch).subscribe(result => {
-      this.success = true;
+      toastr.success("FishCatch Added to the database", "Fish Catch Added");
+      this.fishCatch = new FishCatch();
     });
   }
 

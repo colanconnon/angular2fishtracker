@@ -25,16 +25,7 @@ export class FishcatchesDetailComponent implements OnInit {
 
       setTimeout(() => { this.initMap(parseFloat(this.fishcatch.latitude.toString()), parseFloat(this.fishcatch.longitude.toString())); }, 100);
     });
-    // this._service.get(id).then(fishcatch => {
-    //   if (fishcatch) {
 
-    //     this.fishcatch = fishcatch;
-
-
-    //   } else {
-    //     this.gotoList();
-    //   }
-    // });
   }
 
   cancel() { this.gotoList(); }

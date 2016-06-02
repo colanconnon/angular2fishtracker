@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {Lake, LakesService} from '../lakes/lakes.service';
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
+declare var toastr;
+
 @Component({
   selector: 'newlake-component',
   templateUrl: 'app///newlake-component/newlake-component.html',
@@ -12,14 +14,15 @@ import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 })
 export class NewlakeComponent {
   public lake: Lake;
-  public lakeSuccess: boolean = false;
   constructor(private lakeService: LakesService) {
     this.lake = new Lake();
   }
 
   onSubmitLake() {
     this.lakeService.post(this.lake).subscribe((result) => {
-      this.lakeSuccess = true;
+      toastr.success(`Successfully added Lake: ${this.lake.lakeName}`, "New Lake Added");
+      this.lake.lakeName = "";
+      this.lake.id = 0;
     });
   }
 }
