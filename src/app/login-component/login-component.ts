@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {LoginService} from './login-service';
 
 declare var toastr;
@@ -15,14 +15,24 @@ export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private _router: Router) {}
 
   ngOnInit() {}
 
   login() {
     this.loginService.Login(this.username, this.password).subscribe(res => {
       this.loginService.annouceLogin(true);
-      toastr.success("You are now logged in!", "Successful login");
+      this._router.navigate(['FishCatches']); 
+
+      toastr.success("You are now logged in!", "Successful login", {
+         "positionClass": "toast-bottom-full-width",
+          "closeButton": true
+      });
+    }, (error) => {
+      toastr.error("Error logging in, check username and password and try again", "Error", {
+        "positionClass": "toast-top-full-width",
+         "closeButton": true
+      });
     });
   }
 }

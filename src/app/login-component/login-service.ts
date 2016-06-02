@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Http, Response} from '@angular/http';
 import {Headers, RequestOptions} from '@angular/http';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
@@ -16,7 +15,7 @@ export class LoginService {
   loginAlertService$ = this._loginAlertService.asObservable();
   logoutAlertService$ = this._logoutAlertService.asObservable();
 
-  constructor(public http: Http, private _router: Router) {}
+  constructor(public http: Http) {}
 
   annouceLogin(message: boolean) { this._loginAlertService.next(message); }
 
@@ -29,7 +28,6 @@ export class LoginService {
     return this.http.post(this.LoginUrl, body, options).map(res => res.json()).do(res => {
       console.log(res);
       localStorage.setItem('Token', res.token);
-      this._router.navigate(['FishCatches']); 
 
     });
   }

@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild, AfterViewInit, Renderer, NgZone} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 import {Lake, LakesService} from '../lakes/lakes.service';
 import {FishcatchesService} from '../fishcatches/fishcatches.service';
 import {FishCatch} from '../fishcatches/fishcatch';
@@ -19,7 +19,7 @@ export class FishCatchAddComponent implements AfterViewInit {
   public fishCatch: FishCatch;
   @ViewChild('map') map: any;
   constructor(private _lakeService: LakesService, private _fishCatchService: FishcatchesService,
-    private renderer: Renderer, private _zone: NgZone) {
+    private renderer: Renderer, private _zone: NgZone, private router: Router) {
     this._lakeService.getAll().subscribe(result => this.lakes = result);
     this.fishCatch = new FishCatch();
 
@@ -33,6 +33,7 @@ export class FishCatchAddComponent implements AfterViewInit {
     this._fishCatchService.post(this.fishCatch).subscribe(result => {
       toastr.success("FishCatch Added to the database", "Fish Catch Added");
       this.fishCatch = new FishCatch();
+      this.router.navigate(['FishcatchesList']); 
     });
   }
 

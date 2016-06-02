@@ -8,7 +8,7 @@ import {LogoutComponent} from './logout-component/logout-component';
 import {RegisterComponent} from './register-component/register-component';
 import {AboutComponent} from './about-component/about-component';
 import {LakesRoot} from './lakes/lakes-root.component';
-
+declare var toastr;
 @Component({
   moduleId: module.id,
   selector: 'fishtrackerangular2-app',
@@ -37,5 +37,9 @@ export class Fishtrackerangular2AppComponent {
     loginService.CheckLogin();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(localStorage.getItem("Token") !== null){
+      toastr.success("Welcome Back!");
+    }
+  }
 }
