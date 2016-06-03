@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       this._router.navigate(['FishCatches']); 
 
       toastr.success("You are now logged in!", "Successful login", {
-         "positionClass": "toast-bottom-full-width",
           "closeButton": true
       });
     }, (error) => {

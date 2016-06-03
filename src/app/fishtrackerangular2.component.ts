@@ -28,6 +28,7 @@ declare var toastr;
 ])
 export class Fishtrackerangular2AppComponent {
     private isLoggedIn: boolean = false;
+    public title : string = "FishTracker";
 
   constructor(private loginService: LoginService) {
     loginService.loginAlertService$.subscribe(

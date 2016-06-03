@@ -1,11 +1,9 @@
-<style>
+<br />
+<br />
+<a class="btn btn-primary" [routerLink]="['/FishCatches']"> Back to list </a>
 
-#map {
-   
-}
-</style>
 <div *ngIf="fishcatch">
-  <h3>Lake Name: {{fishcatch.name}}</h3>
+  <h3>Lake Name: {{fishcatch.lakename}}</h3>
   <h4>Latitude: {{fishcatch.latitude}} Longitude: {{fishcatch.longitude}} </h4>
   <p> Details: {{fishcatch.details}} </p>
   

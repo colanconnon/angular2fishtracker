@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FishcatchesService} from './fishcatches.service';
-import {RouteParams, Router} from '@angular/router-deprecated';
+import {RouteParams, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {CanDeactivate, ComponentInstruction} from '@angular/router-deprecated';
 import {FishCatch} from './FishCatch';
 /// <reference path="./google.maps.d.ts" />
@@ -8,7 +8,8 @@ import {FishCatch} from './FishCatch';
 declare var google: any;
 @Component({
   templateUrl: 'app/fishcatches/fishcatches-detail.component.html',
-  styleUrls: ['app/fishcatches/fishcatches-detail.component.css']
+  styleUrls: ['app/fishcatches/fishcatches-detail.component.css'],
+  directives: [ROUTER_DIRECTIVES]
 })
 export class FishcatchesDetailComponent implements OnInit {
   fishcatch: FishCatch;
